@@ -1,0 +1,12 @@
+:root {
+    --black: #000000;
+    --white: #ffffff;
+}
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    border: #292727;
+    border-style:dotted;
+    padding: 10px;
+}
