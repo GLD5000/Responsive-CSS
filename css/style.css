@@ -1,12 +1,68 @@
 :root {
-    --black: #000000;
-    --white: #ffffff;
+    --ff-Roboto: 'Roboto', sans-serif;
+
+    --clr-black: #000000;
+    --clr-white: #ffffff;
 }
 *,
 *::before,
-*::after{
+*::after {
     box-sizing: border-box;
     border: #292727;
-    border-style:dotted;
-    padding: 10px;
+    border-style:inset
+
+}
+h1 {
+    font-family: var(--ff-Roboto);
+    font-weight: 700;
+    font-size: 80px;
+}
+h2{
+    font-family: var(--ff-Roboto);
+    font-weight: 500;
+    font-size: 80px;
+}
+h3{
+    font-family: var(--ff-Roboto);
+    font-weight: 400;
+    font-size: 18px;
+}
+section,p{
+    font-family: var(--ff-Roboto);
+    font-weight: 400;
+    font-size: 15px;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 64px, 1fr;
+}
+.main-body {
+    overflow-y: scroll;
+}
+
+p {
+    padding: 24px;
+}
+
+.grid-h-section {
+    width: clamp(170px, 80%, 800px);
+    margin: auto;
+    display: grid;
+    grid-template-columns: 0.4fr 0.6fr;
+}
+.grid-v-left {
+    display: grid;
+    grid-template-rows: 0.4fr, 0.6fr;
+}
+.grid-v-right {
+    display: grid;
+    grid-template-rows: 0.6fr, 0.4fr;
+}
+.flexbox-h {
+    width: 1fr;
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 1fr;
 }
