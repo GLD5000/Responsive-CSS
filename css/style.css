@@ -24,18 +24,18 @@ h1 {
 h2{
     font-family: var(--ff-Roboto);
     font-weight: 500;
-    font-size: 80px;
+    font-size: clamp(60px, 4vw, 80px) ;
+    margin-bottom: 12px;
 }
 h3{
     font-family: var(--ff-Roboto);
-    font-weight: 400;
-    font-size: clamp(18px, 1.8vw, 26px) ;
-    padding: 24px;
+    font-weight: 600;
+    font-size: clamp(17px, 1.5vw, 24px) ;
 }
 section,p{
     font-family: var(--ff-Roboto);
-    font-weight: 400;
-    font-size: clamp(14px, 1.4vw, 20px) ;
+    font-weight: 425;
+    font-size: clamp(16px, 1.35vw, 20px);
 }
 
 body {
@@ -57,10 +57,9 @@ header {
 
 }
 .wrapper {
-    /*width: clamp(308px, 100vw, 1280px);*/
-    width:fit-content;
+    width: fit-content;
     height: fit-content;
-    border-radius: 12px;
+    border-radius: 4px;
     overflow: hidden;
     margin: 64px auto;
     display: flex;
@@ -72,35 +71,29 @@ header {
     align-content: stretch;
     text-align: center;
     padding:0px;
-    background: darkgray;
+    background-image: linear-gradient(to right,khaki,beige,rgb(240, 222, 161));
 }
 .wrapper >  {
     height: 100%;
+    /*align-content: stretch;
+    align-items:stretch;*/
+
 }
 .left-column {
     width: clamp(306px, 33vw, 510px);
-    background: rgb(207, 190, 190);
-    align-content: stretch;
-    align-items:stretch;
     display: grid;
     grid-template-rows: 0.4fr 1fr;
     padding: 8px;
 }
 .left-column > * + * {
     padding: 4px;
-    background:lemonchiffon;
 }
 .right-column {
     width: clamp(306px, 49vw, 765px);
     min-height:inherit;
-    background: rgb(233, 98, 98);
-    align-content: stretch;
-    align-items: stretch;
-
 
     display: grid;
     grid-template-rows: clamp(170px, 27.8vw, 425px) 1fr;
-
 }
 
 #image-1 {
@@ -111,8 +104,6 @@ header {
 
 .flexbox {
     display: grid;
-    align-content: stretch;
-    align-items:stretch;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 
 }
