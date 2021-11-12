@@ -110,17 +110,30 @@ header {
 }
 
 .flexbox {
+    display: grid;
+    align-content: stretch;
+    align-items:stretch;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+
+}
+.flexbox > * {
+    padding: 24px;
+}
+
+
+/*repeat(auto-fill, minmax(100px, 1fr));
+.flexbox {
     display: flex;
     flex-direction: row;
     flex: 1 1 100%;
     flex-wrap: wrap;
-    justify-content:space-evenly;
+    justify-content:flex-start;
     align-items: stretch;
     align-content: stretch;
 
 }
 
 .flexbox > * {
-    padding: 8px;
-    width: clamp(180px, 30%, 220px);
-}
+    padding: 24px;
+    width: clamp(180px, 32%, 340px);
+}*/
