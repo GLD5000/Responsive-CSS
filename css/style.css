@@ -11,29 +11,27 @@
     box-sizing: border-box;
     /*border: var(--clr-blue-pastel);
     border-style:solid;*/
-    background: var(--clr-black);
     color: var(--clr-blue-pastel);
     padding: 0px;   
     margin: 0px;
-
+    text-align: left;
 }
 h1 {
     font-family: var(--ff-Roboto);
     font-weight: 700;
-    font-size: 80px;
-    margin-bottom: 16px;;
+    font-size: 72px;
 }
 h2{
     font-family: var(--ff-Roboto);
     font-weight: 500;
     font-size: 80px;
-    margin-bottom: 16px;;
 }
 h3{
     font-family: var(--ff-Roboto);
     font-weight: 400;
     font-size: 18px;
-    margin-bottom: 32px;;
+    padding: 24px;
+
 
 }
 section,p{
@@ -49,16 +47,17 @@ body {
 }
 header {
     margin: auto;
+    background: var(--clr-black);
+
 }
 .main-body {
     overflow-y: scroll;
-}
-p {
-    padding: 16px;
+    background: var(--clr-black);
+
 }
 .wrapper {
     width: clamp(350px, 1280px, 90%);
-    height: fit-content;
+    min-height: 700px;
     margin: auto;
     display: flex;
     flex-direction: row;
@@ -67,38 +66,50 @@ p {
     justify-content:space-evenly;
     align-items: stretch;
     align-content: stretch;
-    gap: 16px;
     text-align: center;
     padding: 64px;
     background: darkgray;
 }
+.wrapper > * {
+    height: 100%;
+}
 .left-column {
     width: 37%;
+    height:inherit;
     min-width: 280px;
     background: rgb(207, 190, 190);
     align-content: stretch;
-    align-items: stretch;
+    align-items:stretch;
+    justify-content:space-evenly;
 
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 0.4fr 0.6fr;
-    grid-gap: 20px;
-
+}
+.left-column > * + * {
+    padding: 24px;
+    background:lemonchiffon;
 }
 .right-column {
-    max-width: 58%;
+    width: clamp(50%, 738px 58%);
+    min-height:inherit;
     min-width: 280px;
     background: rgb(233, 98, 98);
     align-content: stretch;
-    align-content: stretch;
+    align-items: stretch;
 
 
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 0.4fr;
-    grid-gap: 20px;
 
 }
+
+#image-1 {
+    background-image: url("../img/Purple\ Image.jpg");
+    padding: 0px;
+}
+
 .flexbox {
     width: 1fr;
     display: flex;
@@ -108,11 +119,10 @@ p {
     justify-content:space-evenly;
     align-items: stretch;
     align-content: stretch;
-    gap: 16px;
-    text-align: center;
 
 }
 
 .flexbox > * {
+    padding: 8px;
     max-width: 180px;
 }
