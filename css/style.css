@@ -11,7 +11,7 @@
     box-sizing: border-box;
     /*border: var(--clr-blue-pastel);
     border-style:solid;*/
-    color: var(--clr-blue-pastel);
+    /*color: var(--clr-blue-pastel);*/
     padding: 0px;   
     margin: 0px;
     text-align: left;
@@ -20,6 +20,7 @@ h1 {
     font-family: var(--ff-Roboto);
     font-weight: 700;
     font-size: 44px;
+    color: white;
 }
 h2{
     font-family: var(--ff-Roboto);
@@ -36,6 +37,7 @@ section,p{
     font-family: var(--ff-Roboto);
     font-weight: 425;
     font-size: clamp(16px, 1.35vw, 20px);
+    color: black;
 }
 
 body {
