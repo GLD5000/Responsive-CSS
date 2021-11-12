@@ -29,26 +29,23 @@ h2{
 h3{
     font-family: var(--ff-Roboto);
     font-weight: 400;
-    font-size: 18px;
+    font-size: clamp(18px, 1.8vw, 26px) ;
     padding: 24px;
-
-
 }
 section,p{
     font-family: var(--ff-Roboto);
     font-weight: 400;
-    font-size: 15px;
+    font-size: clamp(14px, 1.4vw, 20px) ;
 }
 
 body {
     height: 100vh;
     display: grid;
-    grid-template-rows: 40px 1fr;
+    grid-template-rows: 44px 1fr;
 }
 header {
     /*width: clamp(370px, 90vw, 1500px);*/
     width: 100vw;
-    height:40px;
     margin: auto;
     background: var(--clr-black);
     overflow: hidden;
@@ -60,9 +57,12 @@ header {
 
 }
 .wrapper {
-    width: clamp(308px, 100vw, 1280px);
-    height: max(700px, fit-content);
-    margin: auto;
+    /*width: clamp(308px, 100vw, 1280px);*/
+    width:fit-content;
+    height: fit-content;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 64px auto;
     display: flex;
     flex-direction: row;
     flex: 1 1 100%;
@@ -83,11 +83,11 @@ header {
     align-content: stretch;
     align-items:stretch;
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 0.4fr 0.6fr;
+    grid-template-rows: 0.4fr 1fr;
+    padding: 8px;
 }
 .left-column > * + * {
-    padding: 24px;
+    padding: 4px;
     background:lemonchiffon;
 }
 .right-column {
