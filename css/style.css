@@ -19,7 +19,7 @@
 h1 {
     font-family: var(--ff-Roboto);
     font-weight: 700;
-    font-size: 72px;
+    font-size: 44px;
 }
 h2{
     font-family: var(--ff-Roboto);
@@ -43,11 +43,15 @@ section,p{
 body {
     height: 100vh;
     display: grid;
-    grid-template-rows: 40px, 1fr;
+    grid-template-rows: 40px 1fr;
 }
 header {
+    /*width: clamp(370px, 90vw, 1500px);*/
+    width: 100vw;
+    height:40px;
     margin: auto;
     background: var(--clr-black);
+    overflow: hidden;
 
 }
 .main-body {
@@ -56,8 +60,8 @@ header {
 
 }
 .wrapper {
-    width: clamp(350px, 1280px, 90%);
-    min-height: 700px;
+    width: clamp(308    px, 100vw, 1280px);
+    height: max(700px, fit-content);
     margin: auto;
     display: flex;
     flex-direction: row;
@@ -67,16 +71,14 @@ header {
     align-items: stretch;
     align-content: stretch;
     text-align: center;
-    padding: 64px;
+    padding:0px;
     background: darkgray;
 }
-.wrapper > * {
+.wrapper >  {
     height: 100%;
 }
 .left-column {
-    width: 37%;
-    height:inherit;
-    min-width: 280px;
+    width: clamp(306px, 33.3vw, 510px);
     background: rgb(207, 190, 190);
     align-content: stretch;
     align-items:stretch;
@@ -91,27 +93,25 @@ header {
     background:lemonchiffon;
 }
 .right-column {
-    width: clamp(50%, 738px 58%);
+    width: clamp(306px, 50vw, 765px);
     min-height:inherit;
-    min-width: 280px;
     background: rgb(233, 98, 98);
     align-content: stretch;
     align-items: stretch;
 
 
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 0.4fr;
+    grid-template-rows: clamp(170px, 27.8vw, 425px) 1fr;
 
 }
 
 #image-1 {
     background-image: url("../img/Purple\ Image.jpg");
     padding: 0px;
+    align-items: center;
 }
 
 .flexbox {
-    width: 1fr;
     display: flex;
     flex-direction: row;
     flex: 1 1 100%;
@@ -124,5 +124,5 @@ header {
 
 .flexbox > * {
     padding: 8px;
-    max-width: 180px;
+    width: clamp(180px, 30%, 220px);
 }
