@@ -43,26 +43,45 @@ body {
 }
 
 p {
-    padding: 24px;
+    padding: 2x;
 }
 
 .grid-h-section {
     width: clamp(170px, 80%, 800px);
+    height:fit-content;
     margin: auto;
     display: grid;
     grid-template-columns: 0.4fr 0.6fr;
+    grid-template-rows: 1fr;
+    grid-gap: 20px;
+
 }
 .grid-v-left {
     display: grid;
-    grid-template-rows: 0.4fr, 0.6fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.4fr 0.6fr;
+    grid-gap: 20px;
+
 }
 .grid-v-right {
+    width: clamp(250px, 100%, 800px);
     display: grid;
-    grid-template-rows: 0.6fr, 0.4fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 0.4fr;
+    grid-gap: 20px;
+
 }
+
 .flexbox-h {
     width: 1fr;
     display: flex;
+    flex-direction: row;
+    flex: 1 1 auto;
     flex-wrap: wrap;
-    flex-basis: 1fr;
+    justify-content:space-evenly;
+    align-items: stretch;
+    align-content: stretch;
+    gap: 16px;
+
+
 }
