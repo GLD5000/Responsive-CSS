@@ -7,7 +7,7 @@
 
     --width-min: 306px;
 
-    --vw-right: 43vw;
+    --vw-right: 40vw;
     --max-w-img: 740px;
     --height-img-decimal: 0.56;
     --width-left-decimal: 0.5;
@@ -25,7 +25,7 @@
 
     --width-left: clamp(var(--width-min), var(--vw-left), var(--max-w-left));
 
-    --width-wrapper: clamp(var(--width-min), 80vw, calc(128px + var(--max-w-img) + (var(--max-w-left))));
+    --width-wrapper: clamp(var(--width-min), calc(1.4 * (var(--vw-right) + (var(--vw-left)))), calc(128px + var(--max-w-img) + (var(--max-w-left))));
 
 }
 *,
@@ -110,7 +110,7 @@ header {
     min-height: 680px;
     border-radius: 4px;
     overflow: hidden;
-    margin: 32px auto;
+    margin: 32px auto auto auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(var(--width-min), min-content));
     justify-content:center;
