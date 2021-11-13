@@ -5,28 +5,29 @@
     --clr-white: #ffffff;
     --clr-blue-pastel: #569cd6;
 
-    --width-min: 306px;
+    --width-min: 300px;
 
     --vw-right: 40vw;
     --max-w-img: 740px;
+    --breakpoint: 318px;
     --height-img-decimal: 0.56;
     --width-left-decimal: 0.5;
 
-    --max-h-img: calc(var(--height-img-decimal) * var(--max-w-img));
-    --min-h-img: calc(var(--height-img-decimal) * var(--width-min));
-    --vh-right: calc(var(--height-img-decimal) *(var(--vw-right)));
-
     --vw-left: calc(var(--width-left-decimal) *(var(--vw-right)));
-    --max-w-left: calc(var(--width-left-decimal) * var(--max-w-img));
 
     --width-right: clamp(var(--width-min), var(--vw-right), var(--max-w-img));
 
-    --height-img: clamp(var(--min-h-img), var(--vh-right), var(--max-h-img));
+    --height-img: calc(var(--height-img-decimal) *(var(--width-right)));
 
-    --width-left: clamp(var(--width-min), var(--vw-left), var(--max-w-left));
+    --width-left: max(var(--width-min), calc(var(--width-left-decimal) * var(--width-right)));
 
-    --width-wrapper: clamp(var(--width-min), calc(1.4 * (var(--vw-right) + (var(--vw-left)))), calc(128px + var(--max-w-img) + (var(--max-w-left))));
+    --width-left-calc: calc(var(--width-right)*500);
 
+    --width-wrapper: clamp(
+        calc(var(--width-min)+16px), 
+        calc(128px + 70vw),
+        calc(128px + (var(--width-left) + (var(--width-right))))
+    ); 
 }
 *,
 *::before,
@@ -123,6 +124,7 @@ header {
 
 .wrapper >  {
     height: 100%;
+    margin:auto;
     /*align-content: stretch;
     align-items:stretch;*/
 
