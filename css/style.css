@@ -23,12 +23,12 @@
 
     --width-left-calc: calc(var(--width-right)*500);
 
-    --width-wrapper: clamp(
-        calc(var(--width-min)+16px), 
-        max(80vw, (12px + (var(--width-left) + (var(--width-right))))),      
-        calc(128px + (var(--width-left) + (var(--width-right))))
-    ); 
+    --width-card: max(128px + var(--width-min),128px + (var(--width-left) + (var(--width-right))));
+
+  
 }
+
+
 *,
 *::before,
 *::after {
@@ -88,7 +88,7 @@ header {
 
 }
 /* 
-    .wrapper {
+    .card {
     width: fit-content;
     min-height: 680px;
     border-radius: 4px;
@@ -106,8 +106,8 @@ header {
     background-image: linear-gradient(to right,khaki,beige,rgb(240, 222, 161));
 } */
 
-.wrapper {
-    width: var(--width-wrapper);
+.card {
+    width: var(--width-card);
     min-height: 680px;
     border-radius: 4px;
     overflow: hidden;
@@ -122,7 +122,13 @@ header {
     background-image: linear-gradient(to right,khaki,beige,rgb(240, 222, 161));
 }
 
-.wrapper >  {
+@media (max-width: 800px) {
+    .card {
+        width: calc(128px + var(--width-min));
+    }
+}
+
+.card >  {
     height: 100%;
     margin:auto;
     /*align-content: stretch;
