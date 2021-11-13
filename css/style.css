@@ -25,7 +25,7 @@
 
     --width-wrapper: clamp(
         calc(var(--width-min)+16px), 
-        calc(128px + 70vw),
+        max(80vw, (12px + (var(--width-left) + (var(--width-right))))),      
         calc(128px + (var(--width-left) + (var(--width-right))))
     ); 
 }
