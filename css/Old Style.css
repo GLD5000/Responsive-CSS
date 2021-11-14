@@ -8,34 +8,27 @@
     --clr-blue-pastel: #569cd6;
 
     --width-min: 300px;
-    --w-card-dynamic: 95vw;
 
-    --card-padding: 16px;
-    --feature-padding: 16px;
-
-
-    --width-right-decimal: 0.6;
-
-    --w-right-dynamic: calc(var(--width-right-decimal)*var(--w-card-dynamic));
-
+    --vw-right: 40vw;
     --max-w-img: 740px;
     --breakpoint: 318px;
     --height-img-decimal: 0.56;
-    --width-left-decimal: calc(0.4/var(--width-right-decimal));
+    --width-left-decimal: 0.5;
 
+    --vw-left: calc(var(--width-left-decimal) *(var(--vw-right)));
 
-    --width-right: clamp(var(--width-min), var(--w-right-dynamic), var(--max-w-img));
+    --width-right: clamp(var(--width-min), var(--vw-right), var(--max-w-img));
 
     --height-img: calc(var(--height-img-decimal) *(var(--width-right)));
 
     --width-left: max(var(--width-min), calc(var(--width-left-decimal) * var(--width-right)));
 
-    --width-card: clamp(var(--width-min), var(--w-card-dynamic), 1280px);
-    --width-narrow-card: max(300px,98vw);
+    --width-left-calc: calc(var(--width-right)*500);
+
+    --width-card: max(128px + var(--width-min),128px + (var(--width-left) + (var(--width-right))));
 
   
 }
-
 
 
 *,
@@ -60,27 +53,26 @@ h2{
 }
 h3{
     font-family: var(--ff-Trirong);
-    font-weight: 900;
-    font-size: clamp(17px, 1.5em, 24px);
+    font-weight: 800;
+    font-size: clamp(17px, 1.3vw, 24px);
 }
 section,p{
     font-family: var(--ff-Rubik);
-    font-weight: 400;
-    font-size: clamp(16px, 1.25em, 20px);
+    font-weight: 425;
+    font-size: clamp(16px, 1.2vw, 20px);
     color: black;
 }
 
 body {
     height: 100vh;
-    width: 100vw;
     display: grid;
-    grid-template-rows: max-content 1fr;
+    grid-template-rows: 44px 1fr;
 }
 header {
     /*width: clamp(370px, 90vw, 1500px);*/
     width: 100vw;
     margin: auto;
-    background: rgb(73, 73, 73);
+    background: var(--clr-black);
     overflow: hidden;
 
 }
@@ -94,7 +86,7 @@ header {
     grid-template-columns: repeat(auto-fit, 1fr);
 
 }
-
+/* 
     .card {
     width: fit-content;
     min-height: 680px;
@@ -105,29 +97,35 @@ header {
     flex-direction: row;
     flex: 1 1 100%;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content:center;
     align-items: stretch;
     align-content: stretch;
     text-align: center;
+    padding:64px;
     background-image: linear-gradient(to right,khaki,beige,rgb(240, 222, 161));
-}
+} */
 
-/* .card {
+.card {
     width: var(--width-card);
     min-height: 680px;
     border-radius: 4px;
     overflow: hidden;
     margin: 32px auto auto auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(var(--width-min), max-content));
+    grid-template-columns: repeat(auto-fit, minmax(var(--width-min), min-content));
     justify-content:center;
     align-items: stretch;
     align-content: stretch;
+    padding:64px;
     gap: 20px;
-    background-image: linear-gradient(to right,khaki,beige,rgb(211, 176, 63));
+    background-image: linear-gradient(to right,khaki,beige,rgb(240, 222, 161));
 }
- */
 
+@media (max-width: 800px) {
+    .card {
+        width: calc(128px + var(--width-min));
+    }
+}
 
 .card >  {
     height: 100%;
@@ -142,7 +140,9 @@ header {
     grid-template-rows: 0.4fr 1fr;
     gap: 64px;
 }
-
+.left-column > * + * {
+    padding: 4px;
+}
 .right-column {
     width: var(--width-right);
     min-height:inherit;
@@ -150,15 +150,13 @@ header {
     gap: 1em 0px;
     grid-template-rows: var(--height-img) 1fr;
     align-items: stretch;
-    padding: var(--feature-padding);
 
 }
 
-.card-image {
-    width: var(--width-right);
-    height: var(--height-img);
-    flex-grow: 3;
- 
+#image-1 {
+    background-image: url("../img/Purple\ Image.jpg");
+    padding: 0px;
+    align-items: top;
 }
 
 .feature-box {
@@ -168,29 +166,10 @@ header {
     align-content: start;
 }
 .feature-box > * {
+    padding: 0.5em;
     margin: auto;
-    padding: var(--feature-padding);
 
 }
-
-@media (max-width: 800px) {
-    .card-image,
-    .card, 
-    .left-column,
-    .right-column {
-        width: var(--width-narrow-card);
-    }
-    .card-image {
-        width: var(--width-narrow-card);
-        height: calc(var(--height-img-decimal) * var(--width-narrow-card));
-    }
-
-    .right-column {
-        grid-template-rows: calc(var(--height-img-decimal) * var(--width-narrow-card)) 1fr;
-    }
-
-}
-
 
 
 /*repeat(auto-fill, minmax(100px, 1fr));
