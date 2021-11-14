@@ -1,6 +1,8 @@
-:root {
-    --ff-Roboto: 'Roboto', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&family=Trirong:ital,wght@1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+:root {
+    --ff-Rubik: 'Rubik', sans-serif;
+    --ff-Trirong: 'Trirong', serif;
     --clr-black: #000000;
     --clr-white: #ffffff;
     --clr-blue-pastel: #569cd6;
@@ -41,24 +43,24 @@
     text-align: left;
 }
 h1 {
-    font-family: var(--ff-Roboto);
+    font-family: var(--ff-Rubik);
     font-weight: 700;
     font-size: 44px;
     color: white;
 }
 h2{
-    font-family: var(--ff-Roboto);
+    font-family: var(--ff-Rubik);
     font-weight: 700;
     font-size: clamp(70px, 6vw, 90px) ;
     margin-bottom: 12px;
 }
 h3{
-    font-family: var(--ff-Roboto);
+    font-family: var(--ff-Trirong);
     font-weight: 600;
     font-size: clamp(17px, 1.5w, 24px) ;
 }
 section,p{
-    font-family: var(--ff-Roboto);
+    font-family: var(--ff-Rubik);
     font-weight: 425;
     font-size: clamp(16px, 1.2vw, 20px);
     color: black;
