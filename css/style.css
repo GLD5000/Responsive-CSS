@@ -51,13 +51,13 @@ h1 {
 h2{
     font-family: var(--ff-Rubik);
     font-weight: 700;
-    font-size: clamp(70px, 6vw, 90px) ;
+    font-size: clamp(70px, 6vw, 90px);
     margin-bottom: 12px;
 }
 h3{
     font-family: var(--ff-Trirong);
     font-weight: 600;
-    font-size: clamp(17px, 1.5w, 24px) ;
+    font-size: clamp(17px, 1.5w, 24px);
 }
 section,p{
     font-family: var(--ff-Rubik);
