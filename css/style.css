@@ -31,7 +31,7 @@
     --width-left: max(var(--width-min), calc(var(--width-left-decimal) * var(--width-right)));
 
     --width-card: clamp(var(--width-min), var(--w-card-dynamic), 1280px);
-    --width-narrow-card: max(300px,98vw);
+    --width-narrow-card: max(300px,95vw);
 
   
 }
@@ -140,6 +140,7 @@ header {
     width: var(--width-left);
     display: grid;
     grid-template-rows: 0.4fr 1fr;
+    padding: var(--feature-padding);
     gap: 64px;
 }
 
@@ -150,7 +151,6 @@ header {
     gap: 1em 0px;
     grid-template-rows: var(--height-img) 1fr;
     align-items: stretch;
-    padding: var(--feature-padding);
 
 }
 
