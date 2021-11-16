@@ -7,7 +7,7 @@
     --clr-white: #ffffff;
     --clr-blue-pastel: #569cd6;
 
-    --width-min: 300px;
+    --min-content-width: 300px;
     --w-card-dynamic: 95vw;
 
     --card-padding: 16px;
@@ -24,13 +24,13 @@
     --width-left-decimal: calc(0.4/var(--width-right-decimal));
 
 
-    --width-right: clamp(var(--width-min), var(--w-right-dynamic), var(--max-w-img));
+    --width-right: clamp(var(--min-content-width), var(--w-right-dynamic), var(--max-w-img));
 
     --height-img: calc(var(--height-img-decimal) *(var(--width-right)));
 
-    --width-left: max(var(--width-min), calc(var(--width-left-decimal) * var(--width-right)));
+    --width-left: max(var(--min-content-width), calc(var(--width-left-decimal) * var(--width-right)));
 
-    --width-card: clamp(var(--width-min), var(--w-card-dynamic), 1280px);
+    --width-card: clamp(var(--min-content-width), var(--w-card-dynamic), 1280px);
     --width-narrow-card: max(300px,95vw);
 
   
@@ -119,7 +119,7 @@ header {
     overflow: hidden;
     margin: 32px auto auto auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(var(--width-min), max-content));
+    grid-template-columns: repeat(auto-fit, minmax(var(--min-content-width), max-content));
     justify-content:center;
     align-items: stretch;
     align-content: stretch;
@@ -149,14 +149,16 @@ header {
     min-height:inherit;
     display: grid;
     gap: 1em 0px;
-    grid-template-rows: var(--height-img) 1fr;
+    grid-template-rows: fit-content 1fr;
     align-items: stretch;
 
 }
 
 .card-image {
     width: var(--width-right);
-    height: var(--height-img);
+    max-width: 740px;
+    min-width: var(--min-content-width);
+    height: auto;
     flex-grow: 3;
  
 }
@@ -182,13 +184,16 @@ header {
     }
     .card-image {
         width: var(--width-narrow-card);
-        height: calc(var(--height-img-decimal) * var(--width-narrow-card));
+        height: auto;
+        margin:auto;
     }
 
     .right-column {
-        grid-template-rows: calc(var(--height-img-decimal) * var(--width-narrow-card)) 1fr;
+        grid-template-rows: fit-content 1fr;
     }
-
+    .right-column > *{
+        margin:auto;
+    }
 }
 
 
