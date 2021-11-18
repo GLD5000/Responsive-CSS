@@ -7,11 +7,13 @@
     --clr-white: #ffffff;
     --clr-blue-pastel: #569cd6;
 
-    --min-content-width: 300px;
-    --w-card-dynamic: 95vw;
-
     --card-padding: 16px;
     --feature-padding: 16px;
+
+
+    --min-content-width: 300px;
+    --w-card-dynamic: calc(100vw-(var(--card-padding))-(var(--card-padding)));
+
 
     --width-right-decimal: 0.6;
 
