@@ -85,7 +85,7 @@ header {
 .card {
     min-width: calc(var(--min-content-width) + 20px);
     max-width: min(1100px, 90vw);
-    border-radius: 0px;
+    border-radius: 0.1rem 0.1rem 3rem 0.1rem ;
     margin: 1em auto;
     display: flex;
     flex-direction: row;
