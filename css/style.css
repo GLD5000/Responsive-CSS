@@ -9,7 +9,7 @@
 
     --card-padding: 1em;
     --feature-padding: 0.5em;
-    --min-content-width: 280px;
+    --min-content-width: 240px;
     --max-content-width: 1000px;
     --image-width: 740px;
 
@@ -23,9 +23,9 @@
     --hue-card: 270;
 
     --hue-card-a: 270;
-    --hue-card-b: calc(var(--hue-card-a)+90);
-    --hue-card-c: calc(var(--hue-card-a)-180);
-    --hue-card-d: calc(var(--hue-card-a)-90);
+    --hue-card-b: 360;
+    --hue-card-c: 90;
+    --hue-card-d: 180;
 
     --sat-card-1: 35%;
     --sat-card-2: 45%;
@@ -102,6 +102,7 @@ header {
     flex-wrap: wrap;
     gap:var(--card-padding);
     padding:var(--card-padding);
+    overflow: hidden;
 
 }
 
@@ -113,9 +114,6 @@ header {
 
 }
 
-.left-column > * {
-    /* padding: var(--card-padding); */    
-}
 
 .right-column {
     flex: 1.75;
@@ -128,8 +126,8 @@ header {
 .card-image {
     width: 100%;
     max-width: var(--image-width);
-    min-width: var(--min-content-width);
-    height: auto;
+/*     min-width: var(--min-content-width);
+ */    height: auto;
     /* padding:var(--card-padding);  */
 }
 
@@ -145,42 +143,28 @@ header {
 }
 
 .card {
-    background-image: linear-gradient(85deg, hsl(var(--hue-card), var(--sat-card-1), 90%), 10%,
-        hsl(var(--hue-card), var(--sat-card-2), 80%), 70%,
-        hsl(var(--hue-card), var(--sat-card-1), 90%));
+    background-image: linear-gradient(85deg, hsl(var(--hue-card-a), var(--sat-card-1), 90%), 10%,
+        hsl(var(--hue-card-a), var(--sat-card-2), 80%), 70%,
+        hsl(var(--hue-card-a), var(--sat-card-1), 90%));
 
 }
 
 .card:nth-child(4n-1) {
-    background-image: linear-gradient(85deg, hsl(var(--hue-card), var(--sat-card-1), 90%), 10%,
-        hsl(var(--hue-card), var(--sat-card-2), 80%), 70%,
-        hsl(var(--hue-card), var(--sat-card-1), 90%));
+    background-image: linear-gradient(85deg, hsl(var(--hue-card-b), var(--sat-card-1), 90%), 10%,
+        hsl(var(--hue-card-b), var(--sat-card-2), 80%), 70%,
+        hsl(var(--hue-card-b), var(--sat-card-1), 90%));
 
 }
 
 .card:nth-child(4n-2) {
-    background-image: linear-gradient(85deg, hsl(var(--hue-card), var(--sat-card-1), 90%), 10%,
-        hsl(var(--hue-card), var(--sat-card-2), 80%), 70%,
-        hsl(var(--hue-card), var(--sat-card-1), 90%));
+    background-image: linear-gradient(85deg, hsl(var(--hue-card-c), var(--sat-card-1), 90%), 10%,
+        hsl(var(--hue-card-c), var(--sat-card-2), 80%), 70%,
+        hsl(var(--hue-card-c), var(--sat-card-1), 90%));
 }
 
 .card:nth-child(4n-3) {
-    background-image: linear-gradient(85deg, hsl(var(--hue-card), var(--sat-card-1), 90%), 10%,
-        hsl(var(--hue-card), var(--sat-card-2), 80%), 70%,
-        hsl(var(--hue-card), var(--sat-card-1), 90%));
+    background-image: linear-gradient(85deg, hsl(var(--hue-card-d), var(--sat-card-1), 90%), 10%,
+        hsl(var(--hue-card-d), var(--sat-card-2), 80%), 70%,
+        hsl(var(--hue-card-d), var(--sat-card-1), 90%));
 }
 
-/* .div-card-image{
-    height: fit-content;
-}
- */
-/* .card::before {
-    display: inline-block;
-    top:0px;
-    left:0;
-    background-image: linear-gradient(#000,#fff);
-    background-size: cover;
-    width: 100%;
-    height:100%;
-    z-index: 1;
-} */
