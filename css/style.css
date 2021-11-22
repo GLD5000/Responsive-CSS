@@ -13,12 +13,21 @@
     --max-content-width: 1000px;
     --image-width: 740px;
 
-    --font-size-large: clamp(3rem, 1rem + 10vw, 7rem);
-    --font-size-h1: calc(0.33*var(--font-size-large));
-    --font-size-h2: calc(0.6*var(--font-size-large));
-    --font-size-h3: calc(0.25*var(--font-size-large));
-    --font-size-p: calc(0.9333*var(--font-size-h3));
-    --font-size-strong: calc(1.0666*var(--font-size-h3));
+    --font-scale-global: 1;
+    --font-scale-h1: 0.33;
+    --font-scale-h2: 0.6;
+
+    --font-scale-h3: 0.25;
+    --font-scale-p: 0.875;
+    --font-scale-strong: 0.925;
+    
+    --font-size-large: clamp(3rem, 1rem + 10vw, 6rem);
+    --font-size-h1: calc(var(--font-scale-global)*var(--font-scale-h1)*var(--font-size-large));
+    --font-size-h2: calc(var(--font-scale-global)*var(--font-scale-h2)*var(--font-size-large));
+
+    --font-size-h3: calc(var(--font-scale-global)*var(--font-scale-h3)*var(--font-size-large));
+    --font-size-p: calc(var(--font-scale-global)*var(--font-scale-p)*var(--font-size-h3));
+    --font-size-strong: calc(var(--font-scale-global)*var(--font-scale-strong)*var(--font-size-h3));
 
     --hue-card: 270;
 
@@ -61,7 +70,7 @@ section,p {
     font-size: var(--font-size-p);
     color: black;
 }
-.strong {
+strong {
     font-weight: 600;
     font-size: var(--font-size-strong);
     color: black;
