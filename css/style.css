@@ -38,7 +38,6 @@
 
     --sat-card-1: 35%;
     --sat-card-2: 45%;
-
 }
 
 *,
@@ -56,20 +55,24 @@ h1 {
     font-size: var(--font-size-h1);
     color: white;
 }
+
 h2 {
     font-weight: 800;
     font-size: var(--font-size-h2);
     margin-bottom: 0.25em;
 }
+
 h3 {
     font-weight: 600;
     font-size: var(--font-size-h3);
 }
+
 section,p {
     font-weight: 400;
     font-size: var(--font-size-p);
     color: black;
 }
+
 strong {
     font-weight: 600;
     font-size: var(--font-size-strong);
@@ -82,15 +85,18 @@ body {
     display: grid;
     grid-template-rows: fit-content 1fr fit-content;
 }
+
 header {
     width: 100vw;
     margin: auto;
     background-image: linear-gradient(to right, #777, 20%, #555, 70%, #444);
 }
+
 .main-body {
     overflow-y: scroll;
     background-image: linear-gradient(-25deg, #000, 20%, #323, 70%, #000);
 }
+
 .content {
     display: flex;
     flex-wrap: wrap;
@@ -99,6 +105,7 @@ header {
     padding:var(--card-padding);
     gap:var(--card-padding);
     margin: 1em auto;
+    max-width: clamp(2255px, (100vw - 3380px) * 1000, 3380px);
 }
 
 .card {
@@ -112,7 +119,6 @@ header {
     gap:var(--card-padding);
     padding:var(--card-padding);
     overflow: hidden;
-
 }
 
 .left-column {
@@ -120,12 +126,11 @@ header {
     display: grid;
     grid-template-rows: 0.4fr 1fr;
     height:min-content;
-
 }
 
 
 .right-column {
-    flex: 1.75;
+    flex: 1.65;
     min-width: var(--min-content-width);
     height:min-content;
     display: grid;
@@ -135,9 +140,7 @@ header {
 .card-image {
     width: 100%;
     max-width: var(--image-width);
-/*     min-width: var(--min-content-width);
- */    height: auto;
-    /* padding:var(--card-padding);  */
+    height: auto;
 }
 
 .feature-box {
@@ -155,14 +158,12 @@ header {
     background-image: linear-gradient(85deg, hsl(var(--hue-card-a), var(--sat-card-1), 90%), 10%,
         hsl(var(--hue-card-a), var(--sat-card-2), 80%), 70%,
         hsl(var(--hue-card-a), var(--sat-card-1), 90%));
-
 }
 
 .card:nth-child(4n-1) {
     background-image: linear-gradient(85deg, hsl(var(--hue-card-b), var(--sat-card-1), 90%), 10%,
         hsl(var(--hue-card-b), var(--sat-card-2), 80%), 70%,
         hsl(var(--hue-card-b), var(--sat-card-1), 90%));
-
 }
 
 .card:nth-child(4n-2) {
