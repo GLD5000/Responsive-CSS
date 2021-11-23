@@ -125,12 +125,13 @@ header {
     flex: 1;
     display: grid;
     grid-template-rows: 0.4fr 1fr;
+    min-width: var(--min-content-width);
     height:min-content;
 }
 
 
 .right-column {
-    flex: 1.65;
+    flex: 1.7;
     min-width: var(--min-content-width);
     height:min-content;
     display: grid;
