@@ -104,9 +104,10 @@ header {
 }
 
 .content {
-    animation: fadeInAnimation ease 2s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+
+    animation: 4s ease 0s 1 fadeInAnimation;
+
+
 
     --breakpoint-1: 2264px; 
     --breakpoint-2: calc(1.5*var(--breakpoint-1));    
@@ -130,6 +131,15 @@ header {
      }
 }
 
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
 .card {
     min-width: calc(var(--min-content-width) + var(--card-padding));
     max-width: min(1100px, 90vw);
@@ -142,15 +152,16 @@ header {
     padding:var(--card-padding);
     overflow: hidden;
     border: 1px solid #fff;
-    box-shadow: 0px 0px 0.75em #0005;
+    box-shadow: 2px 2px 0.85em #0005;
     transition: all 300ms ease-in-out;
     transform: scale(0.98);
-    
+    animation: 1s ease-out 0s 1 slideInFromBottom;
+
 }
 
 .card:hover,
 .card:active {
-    box-shadow: 0px 0px 1em #0008;
+    box-shadow: 12px 12px 1em #0008;
     transform: scale(1);
 }
 
@@ -182,7 +193,7 @@ header {
     max-width: var(--image-width);
     height: auto;
 }
-
+    
 .feature-box {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(var(--min-content-width), 1fr));
