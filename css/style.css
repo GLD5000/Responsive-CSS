@@ -105,7 +105,6 @@ header {
 
 .content {
 
-    animation: 4s ease 0s 1 fadeInAnimation;
 
 
 
@@ -205,25 +204,45 @@ header {
     padding: var(--feature-padding);
 }
 
-.card {
+.card:nth-child(4n) {
+    opacity:0;
+
+/*     animation: 4s ease 1.25s 1 slideInFromBottom;
+ */    animation: 4s ease 1.25s 1 fadeInAnimation forwards;
+
+
     background-image: linear-gradient(85deg, hsl(var(--hue-card-a), var(--sat-card-1), var(--lum-card-2)), 10%,
         hsl(var(--hue-card-a), var(--sat-card-2), var(--lum-card-1)), 70%,
         hsl(var(--hue-card-a), var(--sat-card-1), var(--lum-card-2)));
 }
 
 .card:nth-child(4n-1) {
+    opacity:0;
+
+/*     animation: 4s ease 1s 1 slideInFromBottom;
+ */    animation: 4s ease 1s 1 fadeInAnimation forwards;
+
     background-image: linear-gradient(85deg, hsl(var(--hue-card-b), var(--sat-card-1), var(--lum-card-2)), 10%,
         hsl(var(--hue-card-b), var(--sat-card-2), var(--lum-card-1)), 70%,
         hsl(var(--hue-card-b), var(--sat-card-1), var(--lum-card-2)));
 }
 
 .card:nth-child(4n-2) {
+    opacity:0;
+/*     animation: 4s ease 0.75s 1 slideInFromBottom;
+ */    animation: 4s ease 0.75s 1 fadeInAnimation forwards;
+
     background-image: linear-gradient(85deg, hsl(var(--hue-card-c), var(--sat-card-1), var(--lum-card-2)), 10%,
         hsl(var(--hue-card-c), var(--sat-card-2), var(--lum-card-1)), 70%,
         hsl(var(--hue-card-c), var(--sat-card-1), var(--lum-card-2)));
 }
 
 .card:nth-child(4n-3) {
+    opacity:0;
+
+/*     animation: 4s ease 0.5s 1 slideInFromBottom;
+ */    animation: 4s ease 0.5s 1 fadeInAnimation forwards;
+
     background-image: linear-gradient(85deg, hsl(var(--hue-card-d), var(--sat-card-1), var(--lum-card-2)), 10%,
         hsl(var(--hue-card-d), var(--sat-card-2), var(--lum-card-1)), 70%,
         hsl(var(--hue-card-d), var(--sat-card-1), var(--lum-card-2)));
