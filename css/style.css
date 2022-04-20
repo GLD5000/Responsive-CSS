@@ -148,11 +148,7 @@ header {
     width:100%;
 }
 
-.next-link {
-    display: block;
-    float: bottom;
-    background:red;
-}
+
 
 .card {
     min-width: calc(var(--min-content-width) + var(--card-padding));
@@ -191,7 +187,7 @@ header {
 
 .right-column {
     --min-width: 365px;
-    --breakpoint: 560px;
+    --breakpoint: 512px;
 
     flex: 2.55;
     /* min-width: var(--min-content-width); */
