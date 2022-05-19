@@ -1,7 +1,61 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&family=Trirong:ital,wght@1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Libre+Franklin:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oswald:wght@200;300;400;500;600;700&family=Quattrocento:wght@400;700&display=swap');
 
 :root {
-    --ff-Rubik: 'Rubik', sans-serif;
+
+    /* Fonts */
+    --font_ratio: 1.6;
+    
+    --font_min_px: 12;
+    --font_max_px: 42;
+    
+    --min_width_px: 280;
+    --max_width_px: 2000;
+    
+    --font_min_rem: calc(1rem *(var(--font_min_px)/16));
+    --font_max_rem: calc(1rem *(var(--font_max_px)/16));
+    
+    --increment_decimal: calc( ( var(--font_max_px) - var(--font_min_px) ) / ( var(--max_width_px) - var(--min_width_px) ) );
+    --increment_vw: calc( var(--increment_decimal) * 100vw);
+    
+    --offset_rem: calc((var(--font_min_px) - (var(--min_width_px) * var(--increment_decimal) ))/16*1rem);
+    
+    --font_mid: calc( var(--offset_rem) + var(--increment_vw) );
+    
+    --gem: clamp(var(--font_min_rem), var(--font_mid), var(--font_max_rem) );
+    
+    --gem2: calc(var(--gem) * var(--font_ratio));
+    --gem3: calc(var(--gem2) * var(--font_ratio));
+    --gem4: calc(var(--gem3) * var(--font_ratio));
+    --gem5: calc(var(--gem4) * var(--font_ratio));
+    --gem6: calc(var(--gem5) * var(--font_ratio));
+
+
+
+
+/*          IMPORTED ^^^^*/
+
+
+--font-size-h1: var(--gem3);
+--font-size-h2: var(--gem4);
+
+--font-size-h3: var(--gem2);
+--font-size-p: var(--gem);
+--font-size-strong: var(--gem);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     --clr-black: #000000;
     --clr-white: #ffffff;
@@ -14,30 +68,7 @@
     --min-content-width: 240px;
     --max-content-width: 1000px;
     --image-width: 740px;
-/* 
-    --font-scale-global: 0.8;
-    --font-scale-h1: 0.33;
-    --font-scale-h2: 0.6;
 
-    --font-scale-h3: 0.25;
-    --font-scale-p: 0.875;
-    --font-scale-strong: 0.925;
-    
-    --font-size-large: clamp(3rem, 1rem + 10vw, 6rem);
-    --font-size-h1: calc(var(--font-scale-global)*var(--font-scale-h1)*var(--font-size-large));
-    --font-size-h2: calc(var(--font-scale-global)*var(--font-scale-h2)*var(--font-size-large));
-
-    --font-size-h3: calc(var(--font-scale-global)*var(--font-scale-h3)*var(--font-size-large));
-    --font-size-p: calc(var(--font-scale-global)*var(--font-scale-p)*var(--font-size-h3));
-    --font-size-strong: calc(var(--font-scale-global)*var(--font-scale-strong)*var(--font-size-h3));
- */
-
-    --font-size-h1: 32px;
-    --font-size-h2: 38px;
-
-    --font-size-h3: 18px;
-    --font-size-p: 16px;
-    --font-size-strong: 16px;
 
 
     --hue-card: 270;
@@ -109,7 +140,7 @@ header {
 .main-body {
     overflow-y: scroll;
     /* background-image: linear-gradient(-25deg, rgb(255, 255, 255), 20%, #eee, 70%, rgb(255, 255, 255)); */
-    background: #eee;
+    background: #333;
 }
 
 .content {
@@ -259,3 +290,48 @@ header {
         hsl(var(--hue-card-d), var(--sat-card-1), var(--lum-card-2)));
 }
 
+
+
+/* imported*//*
+
+  *, *:before, *:after {
+    box-sizing: border-box;
+    padding:0px;
+    margin:0px;
+  }
+  .card_section{
+    width:100%;
+    background: linear-gradient(0deg,#513C59,#69507A);
+    border: solid 10px black;
+    color: #F6D7FC;
+  }
+  .card{
+    align-items:center;
+    padding: 80px 0px; 
+    width: min-content;
+    margin:auto;
+    --font_unit: var(--gem4);
+  }
+  h1{
+    width: fit-content;
+    border: solid 2px white;
+    margin:auto;   
+    white-space: nowrap;
+
+    font-family: 'Bebas Neue', cursive;
+    
+    font-size: var(--font_unit);
+    line-height:90%;
+    --spacing: calc(0.1 * var(--font_unit));
+    letter-spacing: var(--spacing);
+    text-indent: calc(1.25 * var(--spacing));
+    padding-top: calc(0.1175 * var(--font_unit));
+  }
+  p{
+    font-family: 'Montserrat', sans-serif;
+    font-size: var(--gem);
+    padding: calc(0.1 * var(--font_unit));
+    line-height: 1.5;
+  }
+  
+  */
